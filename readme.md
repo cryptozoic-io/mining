@@ -92,10 +92,10 @@ If a Super miner Lv.5 get mined at block 183000 when the total reward is 64VCC.t
 | 64 | 64\*5% = 3.2 | 64\*30% = 19.2 VCC | 64\*10% = 41.6 VCC | 64 \* 0% = 0 VCC |
 
 ### 2.2 Destroy Address
-The destroyed part of mining reward is sent to the address"0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFD"
+The destroyed part of mining reward is sent to the address"0xdeaDDeADDEaDdeaDdEAddEADDEAdDeadDEADDEaD"
 
 you can get more detail about the destroy address:
-[HTTP://www.vccscan.com](http://www.vccscan.com/addr/0xfffffffffffffffffffffffffffffffffffffffd)
+[http://www.vccscan.com/addr/0xdeaDDeADDEaDdeaDdEAddEADDEAdDeadDEADDEaD](http://www.vccscan.com/addr/0xdeaDDeADDEaDdeaDdEAddEADDEAdDeadDEADDEaD)
 
 
 ## 3. Principle of Mining
