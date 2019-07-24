@@ -12,7 +12,7 @@ Lite miner can mine normally and get the 10% of the rewards. There is only one r
 
 * **1.Prepare one or more mining machines built-in the mining software.**
 
-#### Reward of lite miner
+#### R**eward of lite miner **
 
 | beginning block number | ending block number | reward of block | reward of lite miner |
 | :--- | :--- | :--- | :--- |
@@ -55,13 +55,48 @@ The details are following:
 | 12,800,001 | 19,200,000 | 4 VCC | 0.80    VCC | 1.20 VCC | 1.60 VCC | 2.00 VCC | 2.60 VCC |
 | 19,200,001 | endless | 2 VCC | 0.40    VCC | 0.60 VCC | 0.80 VCC | 1.00 VCC | 1.30 VCC |
 
-## 2. Principle of Mining
+## 2. Reward of new block
 
-### 2.1 How to judge the miner type?
+The reward of new block divides into 4 parts
+
+* Making-A-Wish program
+* Super nodes
+* Miners
+* Destroy
+
+The details are as following.
+
+| Making-A-Wish Program | Super Nodes | Miners | Destory |
+| :--- | :--- | :--- | :--- |
+| 5% | 30% | 10-65% | 0-55%\(Depends on the miners' reward amount\) |
+
+Note that miners' reward is dynamic base on the Cryptozoic-POS.The left is sent to destroyed.
+
+For Example.
+
+**Case 1. Lite miner get mined**
+
+If a lite miner get mined at block 183000 when the total reward is 64VCC. the reward's detail is like this:
+
+| Total Reward | Making-A-Wish Program\(5%\) | Super Nodes\(30%\) | LiteMiner\(10%\) | Destory\(Remain:1-5%-30%-10% = 55%\) |
+| :--- | :--- | :--- | :--- | :--- |
+| 64 | 64\*5% = 3.2 | 64\*30% = 19.2 VCC | 64\*10% = 6.4 VCC | 64 \* 55% = 35.2 VCC |
+
+**Case 2. Super miner get mined**
+
+If a Super miner Lv.5 get mined at block 183000 when the total reward is 64VCC.the reward's detail is like this:
+
+| Total Reward | Making-A-Wish Program\(5%\) | Super Nodes\(30%\) | Super Miner Lv.5\( 65% \) | Destory\(Remain:1-5%-30%-65% = 0%\) |
+| :--- | :--- | :--- | :--- | :--- |
+| 64 | 64\*5% = 3.2 | 64\*30% = 19.2 VCC | 64\*10% = 41.6 VCC | 64 \* 0% = 0 VCC |
+
+## 3. Principle of Mining
+
+### 3.1 How to judge the miner type?
 
 As shown above in 1.2 Super Miner, the difference of Lite miner and Super miner is whether if miners holds the specified amount of VCC.
 
-### 2.2 How to reward differently when mining?
+### 3.2 How to reward differently when mining?
 
 the reward will be calculated when a block is generated.So the processing of reward are:
 
@@ -69,6 +104,7 @@ the reward will be calculated when a block is generated.So the processing of rew
 * step 2. determine the level of the miner
 * step 3. calculate the reward
 * step 4. add reward to the coinbase
+* step 5. destroy the left part.
 
 the pseudo code is like this:
 
@@ -114,15 +150,23 @@ if(coinbaseVCCAmont>=160000000 ){
     //lite miner gets the 10%
     minerReward = totalReward * 0.10;
 }
-//last. add the reward to the coinbase
+
+//forth. add the reward to the coinbase
 ...
+addBalance(miner.header.getCoinBase,minerReward);
+
+//last. destroy the left
+...
+var rewardToDestroy = totalReward - 0.35*totalReward - minerReward;
+var destroyAddress = "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFD"
+addBalance(destroyAddress,rewardToDestroy);
 ```
 
-### 2.3 updating time
+### 3.3 updating time
 
 This mining principle is going to effect at the block 183000.the earth time is about at Jul 26 2019.
 
-## 3. Locale Mining
+## 4. Locale Mining
 
 All miners can mine locally by using the gvc client which supplies the mining interface.Only machines built-in CPU can mine locally.
 
@@ -130,7 +174,7 @@ get the gvc client from github:
 
 > [https://github.com/cryptozoic-io/support/tree/master/downloads](https://github.com/cryptozoic-io/support/tree/master/downloads)
 
-## 4. Mining Pool
+## 5. Mining Pool
 
 Everyone can build up a mining pool and get the rewards of mining.
 
