@@ -56,6 +56,7 @@ The details are following:
 | 19,200,001 | endless | 2 VCC | 0.40    VCC | 0.60 VCC | 0.80 VCC | 1.00 VCC | 1.30 VCC |
 
 ## 2. Reward of new block
+### 2.1 Reward details
 
 The reward of new block divides into 4 parts
 
@@ -89,6 +90,13 @@ If a Super miner Lv.5 get mined at block 183000 when the total reward is 64VCC.t
 | Total Reward | Making-A-Wish Program\(5%\) | Super Nodes\(30%\) | Super Miner Lv.5\( 65% \) | Destory\(Remain:1-5%-30%-65% = 0%\) |
 | :--- | :--- | :--- | :--- | :--- |
 | 64 | 64\*5% = 3.2 | 64\*30% = 19.2 VCC | 64\*10% = 41.6 VCC | 64 \* 0% = 0 VCC |
+
+### 2.2 Destroy Address
+The destroyed part of mining reward is sent to the address"0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFD"
+
+you can get more detail about the destroy address:
+[HTTP://www.vccscan.com](http://www.vccscan.com/addr/0xfffffffffffffffffffffffffffffffffffffffd)
+
 
 ## 3. Principle of Mining
 
