@@ -10,7 +10,7 @@ According to the voting data of Wish-making plan, the final result is to limit t
 >
 > - (17.14%)Cancel the quota limit.
 >
-> - (12.24%)Keep the status quo and make no adjustments.
+> - (11.24%)Keep the status quo and make no adjustments.
 >
 > - (5.03%)Others
 
