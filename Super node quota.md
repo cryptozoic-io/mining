@@ -1,4 +1,4 @@
-###Super node quota###
+***Super node quota***
 
 According to the voting data of Wish-making plan, the final result is to limit the quota and increase the quota according to the block height.
 
